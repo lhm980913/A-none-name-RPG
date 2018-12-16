@@ -20,6 +20,7 @@ public class Tower_Cannon : MonoBehaviour,Tower {
 	void Update () {
         if (enemyInRange.Count > 0)
         {
+           
             while (time <= 0)
             {
                 time = CoolDown;
@@ -66,15 +67,20 @@ public class Tower_Cannon : MonoBehaviour,Tower {
     IEnumerator BulletFly(GameObject go)
     {
         float t = 0;
-        float flytime = 3;
+        float flytime = 0.6f;
         GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
         while(t < flytime)
         {
+            if(go!=null)
             b.transform.position = Vector3.Lerp(transform.position, go.transform.position, t / flytime);
             t += Time.deltaTime;
             yield return null;
         }
         go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
+        if(b!=null)
+        {
+            Destroy(b);
+        }
         
     }
     

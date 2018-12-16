@@ -11,7 +11,11 @@ interface IActor
 public class Enemy_Enemy : MonoBehaviour,IActor {
     
     public EnemyAsset enemyAsset;
-    private float Health = 10;
+    public float Health ;
+    private void Start()
+    {
+        Health = enemyAsset.MaxHealth;
+    }
 
     public bool BeAttacked(float damage)
     {
