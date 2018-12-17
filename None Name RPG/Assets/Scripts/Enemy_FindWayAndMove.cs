@@ -17,14 +17,18 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = GetPos(path.way[0]);
+        if(path != null)
+        {
+            transform.position = GetPos(path.way[0]);
+        }
+        
         count = 0;
         loop = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(count < path.way.Count    )
+        if(path != null && count < path.way.Count)
         {
             Move();
             TurnAround();

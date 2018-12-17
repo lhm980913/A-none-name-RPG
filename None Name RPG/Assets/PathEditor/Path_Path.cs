@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class Path : MonoBehaviour {
+public class Path_Path : MonoBehaviour {
 
     public List<Vector3> Points;
 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Path))]
+[CustomEditor(typeof(Path_Path))]
 public class PathEditor : Editor {
 
-    Path path;
+    Path_Path path;
 
     public PathAsset pa;
 
@@ -14,7 +14,7 @@ public class PathEditor : Editor {
 
     private void OnEnable()
     {
-        path = (Path)target;
+        path = (Path_Path)target;
         
     }
 
