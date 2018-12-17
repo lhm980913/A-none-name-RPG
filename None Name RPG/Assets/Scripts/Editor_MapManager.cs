@@ -229,7 +229,6 @@ public class Map
             way.Path.Add(map.Path[i].Pos);
         }
         way.Path.Add(start);
-        way.Path.Reverse();
         UnityEditor.AssetDatabase.CreateAsset(way, path);
         UnityEditor.AssetDatabase.SaveAssets();
         UnityEditor.AssetDatabase.Refresh();
