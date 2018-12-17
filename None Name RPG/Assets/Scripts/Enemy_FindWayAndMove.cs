@@ -17,8 +17,10 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = GetPos(way.Path[0]);
+        transform.position = GetPos(way.Path[0],10);
         count = 0;
+        last = GetPos(way.Path[count]);
+        next = GetPos(way.Path[count + 1]);
         loop = 0;
 	}
 	
@@ -42,7 +44,7 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
     
     void Move()
     {
-        if (Vector3.Distance(transform.position,next) < 0.01 && count < way.Path.Count-1)
+        if (Vector3.Distance(transform.position,next) < 1 && count < way.Path.Count-1)
         {
             //Debug.Log("next:" + count + " last:" + (count - 1));
             last = GetPos(way.Path[count]);
@@ -51,12 +53,20 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
             loop = 0;
         }
         loop += Speed * Time.deltaTime;
-        transform.position = Vector3.Lerp(last,next, loop);
+        transform.position = Vector3.Lerp(last, next, loop);
+        //transform.Translate(next - last);
+        //GetComponent<Rigidbody>().velocity = (next - last).normalized * Speed;
     }
 
     Vector3 GetPos(Vector2Int pos)
     {
-        return UintScale * new Vector3(pos.x, 0, pos.y);
+        //Debug.Log("" + transform.position.y);
+        return UintScale * new Vector3(pos.x - 65, transform.position.y , pos.y - 41);
+    }
+
+    Vector3 GetPos(Vector2Int pos, float y)
+    {
+        return UintScale * new Vector3(pos.x - 65, y, pos.y - 41);
     }
 
     //private void OnGUI()

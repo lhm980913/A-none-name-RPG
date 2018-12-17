@@ -17,7 +17,7 @@ public class Switch_Fire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Fire_Tower.Count);
+        //Debug.Log(Fire_Tower.Count);
 		if(Input.GetKeyDown(KeyCode.K))
         {
             switch_on();
