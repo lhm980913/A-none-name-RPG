@@ -4686,12 +4686,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419151782}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f07a78c049f2724d806460e7947783a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  way: {fileID: 11400000, guid: d27982d8b5c96b9428a5034d921c60fc, type: 2}
+  path: {fileID: 11400000, guid: 1b9065c6db6900041b68a9569d776815, type: 2}
   UintScale: 1
   Speed: 2
   turnTime: 0
@@ -4864,7 +4864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07a78c049f2724d806460e7947783a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  way: {fileID: 11400000, guid: 5512e2b486f96ff42b59211a7ff765c5, type: 2}
+  path: {fileID: 0}
   UintScale: 1
   Speed: 2
   turnTime: 0
@@ -10317,7 +10317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07a78c049f2724d806460e7947783a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  way: {fileID: 11400000, guid: 5b83fc416f061934ba2f02df16abe596, type: 2}
+  path: {fileID: 0}
   UintScale: 1
   Speed: 2
   turnTime: 0
@@ -13027,7 +13027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f07a78c049f2724d806460e7947783a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  way: {fileID: 11400000, guid: 1436bb4cc456d3a438d027885d43bb74, type: 2}
+  path: {fileID: 0}
   UintScale: 1
   Speed: 2
   turnTime: 0
@@ -13318,6 +13318,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391852499}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1398467192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398467194}
+  - component: {fileID: 1398467193}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1398467193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398467192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56882ca8d4df93641a73d7b42dffa588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: []
+--- !u!4 &1398467194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398467192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.4, y: -16.91, z: 3.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405638167
 GameObject:
   m_ObjectHideFlags: 0
@@ -13588,6 +13629,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1421119681}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1466659374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1239778744380624, guid: 4cc64a2420f899e45a6a93f1deca48a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1826093311}
+--- !u!114 &1466659380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466659374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f73e1776659a49a892dde655c8bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 10
 --- !u!1 &1480450373
 GameObject:
   m_ObjectHideFlags: 0
@@ -17353,6 +17411,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114848172380602750, guid: 4cc64a2420f899e45a6a93f1deca48a6,
+        type: 2}
+      propertyPath: Stab
+      value: 
+      objectReference: {fileID: 1283686100842562, guid: 5b88a0c064de5424c8c8cb87cf28be1b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cc64a2420f899e45a6a93f1deca48a6, type: 2}
   m_IsPrefabAsset: 0
