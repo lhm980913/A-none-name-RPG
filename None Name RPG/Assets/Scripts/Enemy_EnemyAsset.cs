@@ -7,5 +7,6 @@ public class EnemyAsset : ScriptableObject {
     
     public float MaxSpeed;
     public float MaxHealth;
-
+    public int Money;
+    public int Money_range;
 }
