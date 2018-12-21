@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Enemy_FindWayAndMove : MonoBehaviour {
 
-    public PathAsset path;
-    public float UintScale = 1;
-
     public float Speed;
     public float turnTime;
     private Vector3 last;
@@ -14,14 +11,15 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
     private Vector3 lastDir;
     private int count;
     private float loop;
+    private PathAsset path;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if(path != null)
         {
-            transform.position = GetPos(path.way[0]);
+            transform.position = path.way[0];
         }
-        
+        Debug.Log("" + transform.position);
         count = 0;
         loop = 0;
 	}
@@ -41,7 +39,11 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
 
     void TurnAround()
     {
-        transform.forward = next - last;
+        if(next - last != Vector3.zero)
+        {
+            transform.forward = next - last;
+        }
+        
     }
     
     void Move()
@@ -49,8 +51,8 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
         if (Vector3.Distance(transform.position,next) < 0.01 && count < path.way.Count -1)
         {
             //Debug.Log("next:" + count + " last:" + (count - 1));
-            last = GetPos(path.way[count]);
-            next = GetPos(path.way[count+1]);
+            last = path.way[count];
+            next = path.way[count+1];
             count++;
             loop = 0;
         }
@@ -58,9 +60,9 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
         transform.position = Vector3.Lerp(last,next, loop);
     }
 
-    Vector3 GetPos(Vector3 pos)
+    public void SetPath(PathAsset pathasset)
     {
-        return UintScale * new Vector3(pos.x, pos.y, pos.z);
+        path = pathasset;
     }
     
 }

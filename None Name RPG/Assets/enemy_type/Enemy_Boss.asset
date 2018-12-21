@@ -8,10 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e5a8378e523043c4b93913ab480a9cfa, type: 3}
   m_Name: Enemy_Boss
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAsset
-  MaxSpeed: 2
-  MaxHealth: 300
-  Money: 140
-  Money_range: 50
