@@ -9,9 +9,7 @@ public class Tower_Fire : MonoBehaviour,Tower{
 
     public bool attacking = false;
 
-    private float re_speed = 3;
-    float energy_cost_speed = 10;
-    float energy = 100;
+
   
     // Use this for initialization
     void Start () {
@@ -23,10 +21,10 @@ public class Tower_Fire : MonoBehaviour,Tower{
        attacking = Switch_Fire.fire;
 
 
-        if (attacking && energy >= 0)
+        if (attacking && Switch_Fire.energy >= 0)
         {
+
             
-            energy -= Time.deltaTime * energy_cost_speed;
             if(burn==null)
             {
                 burn = Instantiate(Fire_Particle, this.transform.position, this.transform.rotation);
@@ -41,10 +39,10 @@ public class Tower_Fire : MonoBehaviour,Tower{
 
         }
         else { Destroy(burn); }
-        if (energy<100&&energy>0&&!attacking)
+        if (Switch_Fire.energy < 100&&!attacking)
         {
             Destroy(burn);
-            energy += Time.deltaTime * re_speed;
+           
         }
      
 

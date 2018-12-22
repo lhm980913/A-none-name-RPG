@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff7825f3db3557448bf483020778583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAsset: {fileID: 11400000, guid: bb52a54623e834f4ba70626950360a8c, type: 2}
+  enemyAsset: {fileID: 11400000, guid: c7241f515b8b23e40846aed321ab459c, type: 2}
   Health: 0
 --- !u!114 &114673508941822090
 MonoBehaviour:
