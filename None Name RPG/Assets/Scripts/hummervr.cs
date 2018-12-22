@@ -33,6 +33,8 @@ public class hummervr : MonoBehaviour {
 
     public int build = 1;
 
+
+    Quaternion roooo;
     // Use this for initialization
     void Start () {
         pre_stab1 = Instantiate(pre_stab);
@@ -43,6 +45,7 @@ public class hummervr : MonoBehaviour {
         pre_bomb1.SetActive(false);
         pre_cannon1 = Instantiate(pre_cannon);
         pre_cannon1.SetActive(false);
+        roooo = pre_fire1.transform.rotation;
     }
 	
 	// Update is called once per frame
@@ -50,7 +53,7 @@ public class hummervr : MonoBehaviour {
 
         RaycastHit hitt = new RaycastHit();
         Ray ray = new Ray(this.transform.position, Vector3.down);
-        Physics.Raycast(ray, out hitt);
+        Physics.Raycast(ray, out hitt,LayerMask.NameToLayer("map"));
 
 
 
@@ -63,7 +66,11 @@ public class hummervr : MonoBehaviour {
             bulidstage = 0;
         }
        
-
+        if(SteamVR_Input._default.inActions.Teleport.GetStateDown(SteamVR_Input_Sources.LeftHand))
+        {
+            Vector3 aaaaa = roooo.eulerAngles;
+            roooo = Quaternion.Euler(0+aaaaa.x,aaaaa.y+ 90, aaaaa.z+0) ;
+        }
         //if(Input.GetKeyDown(KeyCode.Alpha1))
         //{
         //    build = 1;
@@ -115,6 +122,7 @@ public class hummervr : MonoBehaviour {
                                 // Debug.Log("11");
                                 pre_cannon1.SetActive(true);
                                 pre_cannon1.transform.position = new Vector3((int)hitt.point.x, (int)hitt.point.y+1, (int)hitt.point.z);
+                                pre_cannon1.transform.rotation = roooo;
                                 Tower_building = cannon;
                                 pre_building = pre_cannon1;
                             }
@@ -123,6 +131,7 @@ public class hummervr : MonoBehaviour {
                         break;
                     case 2:
                         {
+
                            // pre_fire1.SetActive(false);
                             pre_cannon1.SetActive(false);
                             pre_stab1.SetActive(false);
@@ -132,6 +141,7 @@ public class hummervr : MonoBehaviour {
                                // Debug.Log("11");
                                 pre_fire1.SetActive(true);
                                 pre_fire1.transform.position = new Vector3((int)hitt.point.x, (int)hitt.point.y+1, (int)hitt.point.z);
+                                pre_fire1.transform.rotation = roooo;
                                 Tower_building = fire;
                                 pre_building = pre_fire1;
                             }
@@ -148,6 +158,7 @@ public class hummervr : MonoBehaviour {
                                 // Debug.Log("11");
                                 pre_bomb1.SetActive(true);
                                 pre_bomb1.transform.position = new Vector3((int)hitt.point.x, (int)hitt.point.y, (int)hitt.point.z);
+                                pre_bomb1.transform.rotation = roooo;
                                 Tower_building = bomb;
                                 pre_building = pre_bomb1;
                             }
@@ -164,6 +175,7 @@ public class hummervr : MonoBehaviour {
                                 // Debug.Log("11");
                                 pre_stab1.SetActive(true);
                                 pre_stab1.transform.position = new Vector3((int)hitt.point.x, (int)hitt.point.y, (int)hitt.point.z);
+                                pre_stab1.transform.rotation = roooo;
                                 Tower_building = stab;
                                 pre_building = pre_stab1;
                             }
@@ -311,7 +323,7 @@ public class hummervr : MonoBehaviour {
             if (bulidstage == 2 )
             {
                 Debug.Log("速度不对");
-                Instantiate(Tower_building, pre_building.transform.position, pre_building.transform.rotation);
+                Instantiate(Tower_building, pre_building.transform.position, roooo);
                 bulidstage = 0;
             }
         }
