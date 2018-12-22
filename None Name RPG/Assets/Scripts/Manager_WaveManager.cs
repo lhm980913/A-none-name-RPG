@@ -50,7 +50,8 @@ public class Manager_WaveManager : MonoBehaviour {
 
     void CreateEnemy()
     {
-        GameObject go = Instantiate(enemyPrefab, pathAsset.way[0],Quaternion.identity);
+        //GameObject go = Instantiate(enemyPrefab, pathAsset.way[0],Quaternion.identity);
+        GameObject go = Instantiate(enemyPrefab);
         go.GetComponent<Enemy_FindWayAndMove>().SetPath(pathAsset);
     }
 

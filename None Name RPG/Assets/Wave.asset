@@ -14,8 +14,8 @@ MonoBehaviour:
   waves:
   - Order:
     - enemyClass: 0
-      number: 10
-      deltaTime: 0.5
+      number: 20
+      deltaTime: 1
     - enemyClass: 0
-      number: 2
-      deltaTime: 4
+      number: 10
+      deltaTime: 0.3
