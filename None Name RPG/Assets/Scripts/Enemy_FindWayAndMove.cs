@@ -14,14 +14,19 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
     private PathAsset path;
 
     // Use this for initialization
-    void Start () {
-        if(path != null)
+    private void Awake()
+    {
+        if (path != null)
         {
             transform.position = path.way[0];
         }
-        Debug.Log("" + transform.position);
+        //Debug.Log("" + transform.position);
         count = 0;
         loop = 0;
+    }
+
+    void Start () {
+        
 	}
 	
 	// Update is called once per frame
