@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23380169569063186}
   - component: {fileID: 65227934900175022}
   - component: {fileID: 114848172380602750}
+  - component: {fileID: 114214596992920474}
   m_Layer: 0
   m_Name: Tower_Stab (3)
   m_TagString: road
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005023428012766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: 0}
+  m_LocalPosition: {x: 55, y: 9.01, z: -33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4545201247924640}
@@ -126,6 +127,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 13.95, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114214596992920474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239778744380624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f73e1776659a49a892dde655c8bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 10
 --- !u!114 &114848172380602750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,5 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bfc77f4a395ea4497b1c3fc8906b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stab: {fileID: 0}
+  Stab: {fileID: 1283686100842562, guid: 5b88a0c064de5424c8c8cb87cf28be1b, type: 2}
   enemyInRange: []
