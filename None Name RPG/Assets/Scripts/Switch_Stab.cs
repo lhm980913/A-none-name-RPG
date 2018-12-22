@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Valve.VR;
 public class Switch_Stab : MonoBehaviour {
     public static List<GameObject> Stab_Tower=new List<GameObject>();
     public static bool att = false;
@@ -19,19 +19,21 @@ public class Switch_Stab : MonoBehaviour {
         time += Time.deltaTime;
 
 
-        if (Input.GetKeyDown(KeyCode.J)&&time>0)
+
+
+        if ((Input.GetKeyDown(KeyCode.J)|| SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand)) &&time>0)
         {
             switch_on();
             time = 0;
         }
-        else if (Input.GetKey(KeyCode.J))
+        else 
         {
             switch_off();
         }
-        else if (Input.GetKeyUp(KeyCode.J))
-        {
-            switch_off();
-        }
+        //else if (Input.GetKeyUp(KeyCode.J))
+        //{
+        //    switch_off();
+        //}
     }
     void switch_on()
     {

@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33417753443619482}
   - component: {fileID: 23361425395082672}
   - component: {fileID: 114737344842467436}
-  - component: {fileID: 135902869294846366}
+  - component: {fileID: 65152944998830284}
   m_Layer: 0
   m_Name: c
-  m_TagString: wall
+  m_TagString: pre_tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910604921972432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46, y: 9, z: -30}
+  m_LocalPosition: {x: 51.04532, y: 4.5, z: -9.785601}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +85,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910604921972432}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65152944998830284
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910604921972432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114737344842467436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,15 +110,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyInRange: []
   bullet: {fileID: 1701963762392734, guid: 19a47b33228ed8443bed2136633da54f, type: 2}
---- !u!135 &135902869294846366
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1910604921972432}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 7.09
-  m_Center: {x: 0, y: 0, z: 0}
