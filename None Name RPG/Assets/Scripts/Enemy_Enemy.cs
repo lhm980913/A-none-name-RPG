@@ -14,7 +14,7 @@ public class Enemy_Enemy : MonoBehaviour,IActor {
     public float Health ;
     private void Start()
     {
-        //Health = enemyAsset.MaxHealth;
+        Health = enemyAsset.MaxHealth;
     }
 
     public bool BeAttacked(float damage)

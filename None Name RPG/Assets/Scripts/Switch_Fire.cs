@@ -8,6 +8,10 @@ public class Switch_Fire : MonoBehaviour {
 
     static public bool fire;
 
+
+    public static float re_speed = 3;
+    public static float energy_cost_speed = 10;
+    public static float energy = 100;
     // Use this for initialization
     void Start () {
         
@@ -27,7 +31,14 @@ public class Switch_Fire : MonoBehaviour {
             switch_off();
         }
 
-
+        if(fire && energy>0)
+        {
+            energy -= Time.deltaTime * energy_cost_speed;
+        }
+        if(!fire && energy<100)
+        {
+            energy += Time.deltaTime * re_speed;
+        }
 
 
     }
