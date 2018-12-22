@@ -12,6 +12,7 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
     private int count;
     private float loop;
     private PathAsset path;
+    private float dis;
 
     // Use this for initialization
     private void Awake()
@@ -23,6 +24,7 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
         //Debug.Log("" + transform.position);
         count = 0;
         loop = 0;
+        dis = 0;
     }
 
     void Start () {
@@ -53,15 +55,16 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
     
     void Move()
     {
-        if (Vector3.Distance(transform.position,next) < 0.01 && count < path.way.Count -1)
+        if (loop > 1 && count < path.way.Count -1)
         {
             //Debug.Log("next:" + count + " last:" + (count - 1));
             last = path.way[count];
             next = path.way[count+1];
+            dis = Vector3.Distance(last, next);
             count++;
             loop = 0;
         }
-        loop += Speed * Time.deltaTime;
+        loop += (Speed * Time.deltaTime / dis);
         transform.position = Vector3.Lerp(last,next, loop);
     }
 
