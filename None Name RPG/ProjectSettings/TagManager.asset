@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - road
   - wall
+  - projectile
+  - FxTemporaire
+  - pre_tower
   layers:
   - Default
   - TransparentFX

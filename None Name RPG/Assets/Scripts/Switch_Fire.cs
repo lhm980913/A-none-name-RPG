@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Valve.VR;
 public class Switch_Fire : MonoBehaviour {
 
     static public List<GameObject> Fire_Tower = new List<GameObject>();
@@ -18,11 +18,11 @@ public class Switch_Fire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(Fire_Tower.Count);
-		if(Input.GetKeyDown(KeyCode.K))
+		if(Input.GetKeyDown(KeyCode.K) || SteamVR_Input._default.inActions.GrabPinch.GetStateDown(SteamVR_Input_Sources.LeftHand))
         {
             switch_on();
         }
-        else if (Input.GetKeyUp(KeyCode.K))
+        else if (Input.GetKeyUp(KeyCode.K) || SteamVR_Input._default.inActions.GrabPinch.GetStateUp(SteamVR_Input_Sources.LeftHand))
         {
             switch_off();
         }
