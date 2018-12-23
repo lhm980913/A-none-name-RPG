@@ -10,7 +10,7 @@ public class Switch_Fire : MonoBehaviour {
 
 
     public static float re_speed = 3;
-    public static float energy_cost_speed = 10;
+    public static float energy_cost_speed = 0;
     public static float energy = 100;
     // Use this for initialization
     void Start () {

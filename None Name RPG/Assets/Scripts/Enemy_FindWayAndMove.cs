@@ -58,8 +58,14 @@ public class Enemy_FindWayAndMove : MonoBehaviour {
         if (loop > 1 && count < path.way.Count -1)
         {
             //Debug.Log("next:" + count + " last:" + (count - 1));
-            last = path.way[count];
-            next = path.way[count+1];
+            if (count != 0)
+            {
+                last = next;
+            }
+            else
+                last = path.way[count];
+
+            next = path.way[count+1] + new Vector3(Random.value,0,Random.value);
             dis = Vector3.Distance(last, next);
             count++;
             loop = 0;

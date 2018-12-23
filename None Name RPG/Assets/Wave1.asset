@@ -15,4 +15,4 @@ MonoBehaviour:
   - Order:
     - enemyClass: 0
       number: 20
-      deltaTime: 0.2
+      deltaTime: 0.5
