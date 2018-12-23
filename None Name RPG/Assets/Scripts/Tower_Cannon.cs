@@ -59,7 +59,7 @@ public class Tower_Cannon : MonoBehaviour,Tower {
 
     public void Attack(GameObject go)
     {
-        Debug.Log("Att");
+        //Debug.Log("Att");
         //go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
         StartCoroutine(BulletFly(go));
     }
@@ -71,12 +71,23 @@ public class Tower_Cannon : MonoBehaviour,Tower {
         GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
         while(t < flytime)
         {
-            if(go!=null)
-            b.transform.position = Vector3.Lerp(transform.position, go.transform.position, t / flytime);
-            t += Time.deltaTime;
+            if (go != null)
+            {
+                b.transform.position = Vector3.Lerp(transform.position, go.transform.position, t / flytime);
+                t += Time.deltaTime;
+            }
+            else
+            {
+                Destroy(b);
+            }
+            
             yield return null;
         }
-        go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
+        if(go != null)
+        {
+            go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
+        }
+
         if(b!=null)
         {
             Destroy(b);

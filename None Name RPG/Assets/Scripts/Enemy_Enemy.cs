@@ -12,8 +12,10 @@ public class Enemy_Enemy : MonoBehaviour,IActor {
     
     public EnemyAsset enemyAsset;
     public float Health ;
+    private Animator animator;
     private void Start()
     {
+        animator = GetComponent<Animator>();
         Health = enemyAsset.MaxHealth;
     }
 
@@ -33,6 +35,7 @@ public class Enemy_Enemy : MonoBehaviour,IActor {
     public bool Dead()
     {
         Debug.Log("Dead");
+        animator.SetBool("IsDead", true);
         Destroy(this.gameObject);
         return true;
     }

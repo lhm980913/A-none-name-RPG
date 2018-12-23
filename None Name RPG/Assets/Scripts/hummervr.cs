@@ -93,7 +93,7 @@ public class hummervr : MonoBehaviour {
 
             build = select();
         }
-        Debug.Log(build);
+        //Debug.Log(build);
        // Debug.Log(SteamVR_Input._default.inActions.touched);
 
         if(SteamVR_Input._default.inActions.GrabPinch.GetStateDown(SteamVR_Input_Sources.RightHand) && bulidstage == 1)
@@ -318,7 +318,7 @@ public class hummervr : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("碰得到");
+        //Debug.Log("碰得到");
         if (other.tag== "pre_tower")
         {
             Debug.Log("tag是塔");

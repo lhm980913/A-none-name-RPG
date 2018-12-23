@@ -29,6 +29,7 @@ public class Tower_Bomb : MonoBehaviour,Tower {
       //  enemy.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Acceleration);
         //go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
         StartCoroutine(Lunch(force,enemy));
+        enemy.GetComponent<Enemy_FindWayAndMove>().enabled = false;
     }
 
 
