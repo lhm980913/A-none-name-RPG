@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4898185764887302}
   - component: {fileID: 65157098924553758}
+  - component: {fileID: 114741679585278698}
   m_Layer: 0
   m_Name: s
   m_TagString: pre_tower
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1641627069389874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.613453, y: 3.5, z: -7.22612}
+  m_LocalPosition: {x: 24.812614, y: -41.500816, z: -34.26628}
   m_LocalScale: {x: 4, y: 0.1, z: 4}
   m_Children:
   - {fileID: 4829414350298606}
@@ -88,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 25c1abd3037b3fb4791e49896c71d2e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,3 +153,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stab: {fileID: 0}
   enemyInRange: []
+--- !u!114 &114741679585278698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641627069389874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7714bfd7b36ee1545b13d06105c49e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

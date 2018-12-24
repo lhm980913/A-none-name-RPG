@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 65836803045713762}
   - component: {fileID: 114616264910480312}
   - component: {fileID: 114139859351968792}
+  - component: {fileID: 114865925858240328}
   m_Layer: 0
   m_Name: f
   m_TagString: pre_tower
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249942196108096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.611244, y: 4.5, z: -3.933207}
+  m_LocalPosition: {x: 22.07107, y: -45.497528, z: -36.530006}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4433258330525056}
@@ -91,7 +92,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0529debf6401d4f4cbf8b1023fdef5f4, type: 2}
+  - {fileID: 2100000, guid: 25c1abd3037b3fb4791e49896c71d2e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +127,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0529debf6401d4f4cbf8b1023fdef5f4, type: 2}
+  - {fileID: 2100000, guid: 25c1abd3037b3fb4791e49896c71d2e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,6 +199,17 @@ MonoBehaviour:
     type: 2}
   enemyInRange: []
   attacking: 0
+--- !u!114 &114865925858240328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1249942196108096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7714bfd7b36ee1545b13d06105c49e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136520003272350922
 CapsuleCollider:
   m_ObjectHideFlags: 1

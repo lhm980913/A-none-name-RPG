@@ -23,6 +23,7 @@ public class Enemy_Enemy : MonoBehaviour,IActor {
     {
         if(Health - damage <= 0)
         {
+
             Dead();
         }
         else

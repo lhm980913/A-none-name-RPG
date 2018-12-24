@@ -10,6 +10,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - pre_tower
+  - Tower
   layers:
   - Default
   - TransparentFX

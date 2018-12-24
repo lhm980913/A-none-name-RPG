@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tower_Bomb : MonoBehaviour,Tower {
     public List<GameObject> enemyInRange;
     public float force;
+
+    bool attttttt = false;
     // Use this for initialization
     void Start () {
         enemyInRange = new List<GameObject>();
@@ -12,21 +14,24 @@ public class Tower_Bomb : MonoBehaviour,Tower {
 	
 	// Update is called once per frame
 	void Update () {
-        if (enemyInRange.Count > 0)
+        if (attttttt)
         {
            
             for (int i=0;i<enemyInRange.Count;i++)
             {
                 Attack(enemyInRange[i]);
             }
-
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<MeshRenderer>().enabled = false;
+            attttttt = false;
         }
        
     }
     public void Attack(GameObject enemy)
     {
-      
-      //  enemy.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Acceleration);
+        enemy.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
+
+        //  enemy.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Acceleration);
         //go.GetComponent<Enemy_Enemy>().BeAttacked(5.0f);
         StartCoroutine(Lunch(force,enemy));
         enemy.GetComponent<Enemy_FindWayAndMove>().enabled = false;
@@ -40,6 +45,7 @@ public class Tower_Bomb : MonoBehaviour,Tower {
             enemyInRange.Add(other.gameObject);
             Enemy_Delete del = other.gameObject.GetComponent<Enemy_Delete>();
             del.enemydelete += OnEnemyDestroy;
+            attttttt = true;
         }
     }
 
@@ -50,6 +56,7 @@ public class Tower_Bomb : MonoBehaviour,Tower {
             enemyInRange.Remove(other.gameObject);
             Enemy_Delete del = other.gameObject.GetComponent<Enemy_Delete>();
             del.enemydelete -= OnEnemyDestroy;
+            
         }
     }
 
@@ -62,15 +69,16 @@ public class Tower_Bomb : MonoBehaviour,Tower {
     IEnumerator Lunch(float force, GameObject enemy)
     {
 
-        enemy.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Acceleration);
-
+        
 
         yield return new WaitForSeconds(2);
-        if(enemy!=null)
+        
+        if (enemy!=null)
         {
+            
             enemy.GetComponent<Enemy_Enemy>().BeAttacked(99);
         }
-       
+        Destroy(this.gameObject);
         yield return null;
 
     }

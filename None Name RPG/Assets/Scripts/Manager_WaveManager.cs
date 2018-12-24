@@ -10,6 +10,7 @@ public class Manager_WaveManager : MonoBehaviour {
     public EnemyAsset Small;
 
     public GameObject enemyPrefab;
+    public GameObject BigEnemy;
 
     public WaveAsset waveAsset;
     public PathAsset pathAsset;
@@ -43,15 +44,37 @@ public class Manager_WaveManager : MonoBehaviour {
         for(int number = 0; number < enemywave.number; number++)
         {
             //Debug.Log("A " + enemywave.enemyClass.ToString() + " enemy " + number);
-            CreateEnemy();
+            CreateEnemy(enemywave.enemyClass);
             yield return new WaitForSeconds(time);
         }
     }
 
-    void CreateEnemy()
+    void CreateEnemy(EnemyClass enemyClass)
     {
+        GameObject go;
         //GameObject go = Instantiate(enemyPrefab, pathAsset.way[0],Quaternion.identity);
-        GameObject go = Instantiate(enemyPrefab);
+
+        switch (enemyClass)
+        {
+            case EnemyClass.Big:
+                go = Instantiate(BigEnemy);
+                break;
+            case EnemyClass.Medium:
+                go = Instantiate(enemyPrefab);
+                break;
+            default:
+                go = Instantiate(enemyPrefab);
+                break;
+        }
+        if (enemyClass == EnemyClass.Medium)
+        {
+            
+        }
+        else
+        {
+            
+        }
+        
         go.GetComponent<Enemy_FindWayAndMove>().SetPath(pathAsset);
     }
 
