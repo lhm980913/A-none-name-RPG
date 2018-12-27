@@ -36,5 +36,7 @@ namespace Valve.VR
         public Valve.VR.SteamVR_Action_Vector2 padpos;
         
         public Valve.VR.SteamVR_Action_Boolean touched;
+        
+        public Valve.VR.SteamVR_Action_Boolean menu;
     }
 }

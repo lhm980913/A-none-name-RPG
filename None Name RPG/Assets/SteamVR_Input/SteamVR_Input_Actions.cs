@@ -37,6 +37,8 @@ namespace Valve.VR
         
         public static SteamVR_Action_Boolean __actions_default_in_touched;
         
+        public static SteamVR_Action_Boolean __actions_default_in_menu;
+        
         public static SteamVR_Action_Vibration __actions_default_out_Haptic;
         
         public static SteamVR_Action_Vector2 __actions_platformer_in_Move;
@@ -63,6 +65,7 @@ namespace Valve.VR
             SteamVR_Input.__actions_default_in_Squeeze.Initialize();
             SteamVR_Input.__actions_default_in_padpos.Initialize();
             SteamVR_Input.__actions_default_in_touched.Initialize();
+            SteamVR_Input.__actions_default_in_menu.Initialize();
             SteamVR_Input.__actions_default_out_Haptic.Initialize();
             SteamVR_Input.__actions_platformer_in_Move.Initialize();
             SteamVR_Input.__actions_platformer_in_Jump.Initialize();
@@ -84,6 +87,7 @@ namespace Valve.VR
             Valve.VR.SteamVR_Input.__actions_default_in_Squeeze = ((SteamVR_Action_Single)(SteamVR_Input_References.GetAction("__actions_default_in_Squeeze")));
             Valve.VR.SteamVR_Input.__actions_default_in_padpos = ((SteamVR_Action_Vector2)(SteamVR_Input_References.GetAction("__actions_default_in_padpos")));
             Valve.VR.SteamVR_Input.__actions_default_in_touched = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_default_in_touched")));
+            Valve.VR.SteamVR_Input.__actions_default_in_menu = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_default_in_menu")));
             Valve.VR.SteamVR_Input.__actions_default_out_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Input_References.GetAction("__actions_default_out_Haptic")));
             Valve.VR.SteamVR_Input.__actions_platformer_in_Move = ((SteamVR_Action_Vector2)(SteamVR_Input_References.GetAction("__actions_platformer_in_Move")));
             Valve.VR.SteamVR_Input.__actions_platformer_in_Jump = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_platformer_in_Jump")));
@@ -103,6 +107,7 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.__actions_default_in_Squeeze,
                     Valve.VR.SteamVR_Input.__actions_default_in_padpos,
                     Valve.VR.SteamVR_Input.__actions_default_in_touched,
+                    Valve.VR.SteamVR_Input.__actions_default_in_menu,
                     Valve.VR.SteamVR_Input.__actions_default_out_Haptic,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Move,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Jump,
@@ -122,6 +127,7 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.__actions_default_in_Squeeze,
                     Valve.VR.SteamVR_Input.__actions_default_in_padpos,
                     Valve.VR.SteamVR_Input.__actions_default_in_touched,
+                    Valve.VR.SteamVR_Input.__actions_default_in_menu,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Move,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Jump,
                     Valve.VR.SteamVR_Input.__actions_buggy_in_Steering,
@@ -144,6 +150,7 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.__actions_default_in_GrabPinch,
                     Valve.VR.SteamVR_Input.__actions_default_in_GrabGrip,
                     Valve.VR.SteamVR_Input.__actions_default_in_touched,
+                    Valve.VR.SteamVR_Input.__actions_default_in_menu,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Jump,
                     Valve.VR.SteamVR_Input.__actions_buggy_in_Brake,
                     Valve.VR.SteamVR_Input.__actions_buggy_in_Reset};
@@ -170,6 +177,7 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.__actions_default_in_Squeeze,
                     Valve.VR.SteamVR_Input.__actions_default_in_padpos,
                     Valve.VR.SteamVR_Input.__actions_default_in_touched,
+                    Valve.VR.SteamVR_Input.__actions_default_in_menu,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Move,
                     Valve.VR.SteamVR_Input.__actions_platformer_in_Jump,
                     Valve.VR.SteamVR_Input.__actions_buggy_in_Steering,

@@ -30,6 +30,7 @@ MonoBehaviour:
   - __actions_default_in_Squeeze
   - __actions_default_in_padpos
   - __actions_default_in_touched
+  - __actions_default_in_menu
   - __actions_default_out_Haptic
   - __actions_platformer_in_Move
   - __actions_platformer_in_Jump
@@ -48,6 +49,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98bb5dc274bb1d545b138d1c8758d865, type: 2}
   - {fileID: 11400000, guid: 59ad169f8c6212e45b26289e115207c1, type: 2}
   - {fileID: 11400000, guid: 330f50358b63d48479ae6593af3fdb83, type: 2}
+  - {fileID: 11400000, guid: 0de6326215751934b81959103ad94026, type: 2}
   - {fileID: 11400000, guid: 02526f53b9dced14486c82032ec6aeee, type: 2}
   - {fileID: 11400000, guid: f23076831db86e248b48343704abcb44, type: 2}
   - {fileID: 11400000, guid: 49ad45737cc73be43a22e8fac2800f9f, type: 2}

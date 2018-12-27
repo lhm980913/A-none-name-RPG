@@ -7,8 +7,8 @@ public class Switch_Stab : MonoBehaviour {
     public static bool att = false;
 
 
-   public  float time = 10;
-    float CD = 10f;
+   public static float time = 10;
+    float CD = 5f;
     // Use this for initialization
     void Start () {
 		
@@ -21,7 +21,7 @@ public class Switch_Stab : MonoBehaviour {
 
 
 
-        if ((Input.GetKeyDown(KeyCode.J)|| SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand)) &&time>0)
+        if ((Input.GetKeyDown(KeyCode.J)|| SteamVR_Input._default.inActions.GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand)) &&time>10)
         {
             switch_on();
             time = 0;

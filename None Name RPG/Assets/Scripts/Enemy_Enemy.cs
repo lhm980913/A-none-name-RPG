@@ -36,7 +36,7 @@ public class Enemy_Enemy : MonoBehaviour,IActor {
     public bool Dead()
     {
         Debug.Log("Dead");
-        animator.SetBool("IsDead", true);
+        //animator.SetBool("IsDead", true);
         Destroy(this.gameObject);
         return true;
     }

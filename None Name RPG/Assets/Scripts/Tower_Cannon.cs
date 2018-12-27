@@ -8,7 +8,7 @@ public class Tower_Cannon : MonoBehaviour,Tower {
     public List<GameObject> enemyInRange;
     public GameObject bullet;
 
-    private float CoolDown = 3;
+    private float CoolDown = 1;
     float time = 0;
 
     // Use this for initialization
@@ -26,10 +26,20 @@ public class Tower_Cannon : MonoBehaviour,Tower {
                 time = CoolDown;
                 Attack(enemyInRange[0]);
             }
-
+            time -= Time.deltaTime;
+            Vector3 dir = -this.transform.position + enemyInRange[0].transform.position;
+            Vector3 ddddd = new Vector3();
+            this.transform.forward = Vector3.SmoothDamp(this.transform.forward, new Vector3(dir.x, 0, dir.z), ref ddddd, Time.deltaTime * 5);
         }
-        time -= Time.deltaTime;
+        
         //Debug.Log("" + time);
+
+        
+
+        
+        //this.transform.forward = new Vector3(dir.x, 0, dir.z);
+        
+       // this.transform.rotation = Quaternion.Euler(0, ro_y*180/Mathf.PI, 0);
     }
 
     private void OnTriggerEnter(Collider other)

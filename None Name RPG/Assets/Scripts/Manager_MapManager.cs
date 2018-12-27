@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Valve.VR;
 public class Manager_MapManager : MonoBehaviour {
     
     public GameObject WaveManager_1;
@@ -31,7 +31,7 @@ public class Manager_MapManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)|| SteamVR_Input._default.inActions.menu.GetStateDown(SteamVR_Input_Sources.Any))
         {
             testWave();
         }
@@ -44,7 +44,7 @@ public class Manager_MapManager : MonoBehaviour {
             if(waveManagers[i].waveAsset.waves.Count > wave)
             {
                 StartWave(wave);
-                wave++;
+                //wave++;
             }
         }
     }

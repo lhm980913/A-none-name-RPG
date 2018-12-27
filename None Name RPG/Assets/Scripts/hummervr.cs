@@ -34,6 +34,9 @@ public class hummervr : MonoBehaviour {
     public int build = 1;
 
 
+    public GameObject low;
+    public GameObject vr;
+
     Quaternion roooo;
     // Use this for initialization
     void Start () {
@@ -107,6 +110,8 @@ public class hummervr : MonoBehaviour {
 
         if(bulidstage ==1)
         {
+            vr.SetActive(false);
+            low.SetActive(true); 
             if (hitt.collider != null && (hitt.collider.gameObject.tag == "wall" || hitt.collider.gameObject.tag == "road"))
             {
                 switch (build)
@@ -121,13 +126,13 @@ public class hummervr : MonoBehaviour {
                             {
                                 // Debug.Log("11");
                                 pre_cannon1.SetActive(true);
-                           
-                            }
-
-                            pre_cannon1.transform.position = new Vector3((float)hitt.point.x, (float)hitt.point.y + 1, (float)hitt.point.z);
+                               pre_cannon1.transform.position = new Vector3((float)hitt.point.x, (float)hitt.point.y + 1, (float)hitt.point.z);
                             pre_cannon1.transform.rotation = roooo;
                             Tower_building = cannon;
                             pre_building = pre_cannon1;
+                            }
+
+                        
 
                         }
                         break;
@@ -190,6 +195,8 @@ public class hummervr : MonoBehaviour {
         }
         else if(bulidstage==0)
         {
+            vr.SetActive(true);
+            low.SetActive(false);
             pre_fire1.SetActive(false);
             pre_cannon1.SetActive(false);
             pre_stab1.SetActive(false);
